@@ -17,7 +17,7 @@ def driver():
 class TestPage:
     
     def test_menu(self):
-        
+        self.driver.get("https://www.fullprogramlarindir.net/")
         self.driver.implicitly_wait(10)
         elements = self.driver.find_elements(By.CSS_SELECTOR,"ul#menu-menu > li > a")  
         menu=[]
@@ -26,7 +26,7 @@ class TestPage:
         assert menu == ["ANASAYFA","FULL PROGRAM INDIR","GÜNCEL İŞLETIM SISTEMLER","CEP MOBIL","FULL OYUN İNDIR","ÇEŞIT","YARDIM & İSTEK !"]
     
     def test_urun_ismine_basinca_icerigi_gosteriliyor(self):
-        
+        self.driver.get("https://www.fullprogramlarindir.net/")
         self.driver.implicitly_wait(10)
         link = self.driver.find_element(By.XPATH,"//*[@id='icerik']/div[3]/div[1]/div/h1/a")
         urun_adi = link.text.strip()
